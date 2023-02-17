@@ -1,6 +1,11 @@
 .background {
+<<<<<<< HEAD
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-bottom: 20px;
     border-radius: 20px;
 }
+=======
+    background-color: rgb(247, 247, 247);
+}
+>>>>>>> c80b090166a4320052e5195ebcc657c3010bb917
