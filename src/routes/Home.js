@@ -1,7 +1,33 @@
 import { useEffect, useState } from "react";
-import styles from "./Home.module.css";
 import Movie from "../components/Movie";
+import styled from 'styled-components'
 
+const Wrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    background-color: #ce93d8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+`
+
+const Container = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: #ce93d8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center
+`
+
+const Loading = styled.h1`
+    font-family: 'Gaegu', cursive;
+    color: white;
+    font-size: 70px;
+`
 
 function Home() {
 const [loading, setLoading] = useState(true);
@@ -21,23 +47,25 @@ const json = await (
     }, []);
     console.log(movies);
     return (
-    <div className={styles.background}>
-        {loading ? (
-        <h1 className={styles.title}>Loading...</h1>
-        ) : (
-        <div>
+    <div>
+        {loading ? 
+                (<Wrapper><Loading>Loading...</Loading></Wrapper>) :
+        (
+        <Container>
             {movies.map(movie => (
                 <Movie
                     key={movie.id}
                     id={movie.id}
+                    rating={movie.rating}
+                    runtime={movie.runtime}
                     coverImg={movie.medium_cover_image}
                     title={movie.title}
                     summary={movie.summary}
                     genres={movie.genres}
                 />
             ))}
-        </div>
-        )}
+        </Container>
+            ) }
     </div>
     );
 }
