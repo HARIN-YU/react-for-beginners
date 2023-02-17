@@ -53,7 +53,7 @@ const Genre = styled.li`
 `
 
 const Boxes = styled.div`
-    margin: 20px;
+    margin: 30px;
 `
 
 const Box = styled.div`
