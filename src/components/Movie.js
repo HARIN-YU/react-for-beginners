@@ -50,6 +50,7 @@ const Genre = styled.li`
     font-size: 18px;
     height: 20px;
     box-shadow: 1px 1px 3px #8a6391;
+    cursor: pointer;
 `
 
 const Boxes = styled.div`
@@ -62,7 +63,7 @@ const Box = styled.div`
     height: 700px;
     margin-bottom: 40px;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
     padding-top: 40px;
     box-shadow: 2px 2px 5px #8a6391;
 `
